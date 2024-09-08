@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   top-api.mongo:
-    image: mongo
+    image: top-api:latest
     restart: always
     container_name: top-api.mongo
     environment:
@@ -11,5 +11,4 @@ services:
       - 27017:27017
 
     volumes:
-      - ./mongo-data:/data/db
-    command: --wiredTigerCacheSizeGB 1.5
+      - ./.env/opt/app/.env
